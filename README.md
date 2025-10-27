@@ -42,3 +42,5 @@ npm run dev
 - Limitez le **prompt injection** côté IA et posez des garde-fous si le chatbot sera public.
 
 Bon build ! 🚀
+
+Déploiement auto Netlify.
