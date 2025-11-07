@@ -246,27 +246,53 @@ export default function ClientHome() {
           <h2 className="section-title">Entrer en contact</h2>
           <p className="section-desc">Proposer une collaboration, un témoignage, une idée de vidéo.</p>
 
-          <form name="contact" method="POST" data-netlify="true" className="card">
-            <input type="hidden" name="form-name" value="contact" />
-            <div className="grid grid-2 gap-12">
-              <div>
-                <label htmlFor="name">Nom</label>
-                <input id="name" name="name" required placeholder="Votre nom" className="input" />
-              </div>
-              <div>
-                <label htmlFor="email">Email</label>
-                <input id="email" name="email" type="email" required placeholder="vous@example.com" className="input" />
-              </div>
-            </div>
-            <div className="mt-12">
-              <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" rows={5} placeholder="Votre message..." className="textarea" />
-            </div>
-            <div className="row-gap mt-12">
-              <button className="btn btn-primary" type="submit">Envoyer</button>
-              <Link className="btn" href="/chat">Rejoindre le chat</Link>
-            </div>
-          </form>
+          <form name="contact" className="card"   onSubmit={(e) => {
+    e.preventDefault();
+    alert("Merci ! Ton message est pris en compte (formulaire démo).");
+  }}
+>
+  <div className="grid grid-2 gap-12">
+    <div>
+      <label htmlFor="name">Nom</label>
+      <input
+        id="name"
+        name="name"
+        required
+        placeholder="Votre nom"
+        className="input"
+      />
+    </div>
+    <div>
+      <label htmlFor="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        placeholder="vous@example.com"
+        className="input"
+      />
+    </div>
+  </div>
+  <div className="mt-12">
+    <label htmlFor="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      rows={5}
+      placeholder="Votre message..."
+      className="textarea"
+    />
+  </div>
+  <div className="row-gap mt-12">
+    <button className="btn btn-primary" type="submit">
+      Envoyer
+    </button>
+    <Link className="btn" href="/chat">
+      Rejoindre le chat
+    </Link>
+  </div>
+</form>
         </div>
       </section>
 
